@@ -1,5 +1,7 @@
-def multiply(a, b):
-    return a + b
+EXPECTED = 6
 
 def test_multiply():
-    assert multiply(2, 3) == 6
+    result = multiply(2, 3)
+    if result != EXPECTED:
+        raise AssertionError(f"Expected {EXPECTED}, got {result}")
+

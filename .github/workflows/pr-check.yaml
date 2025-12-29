@@ -21,7 +21,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Ruff linter
-        run: ruff check ./src/simple_bug.py || true
+        run: ruff check ./src/simple_bug.py
 
       - name: Run pytest
         run: pytest ./src/simple_bug.py -v
