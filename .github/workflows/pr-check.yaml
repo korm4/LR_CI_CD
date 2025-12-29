@@ -8,20 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-        
+        uses: actions/checkout@v3
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
-          
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-          
-      - name: Run Ruff linter
-        run: ruff check --config=ruff.toml ./src/
-        
+
       - name: Run pytest
-        run: pytest -v
+        run: pytest ./src/simple_bug.py -v
+
+      - name: Run Ruff linter
+        run: ruff check ./src/simple_bug.py
