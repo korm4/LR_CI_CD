@@ -20,8 +20,8 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-     # - name: Run Ruff linter
-     #   run: ruff check ./src/simple_bug.py
+      - name: Run Ruff linter
+        run: ruff check ./src/simple_bug.py
 
       - name: Run pytest
         run: pytest ./src/simple_bug.py -v
